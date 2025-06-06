@@ -1,6 +1,6 @@
 export const Home = () => {
     return <div>
-        <div className="min-h-screen">
+        <div className="min-y-screen container">
             Home
         </div>
         {/* Theme Toggle */}
