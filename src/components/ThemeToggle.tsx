@@ -1,22 +1,23 @@
 import { Moon, Sun } from "lucide-react";
-import { useEffect, useState, type JSX } from "react";
+import { useEffect, useState } from "react";
+import { cn } from "../lib/utils";
 
 export const ThemeToggle = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
     useEffect(() => {
         const storedTheme = localStorage.getItem("theme");
-        if(storedTheme === 'dark') {
+
+        if (storedTheme === 'dark') {
             document.documentElement.classList.add("dark");
             setIsDarkMode(true);
-        } else if(storedTheme === 'light') {
+        } else if (storedTheme === 'light') {
             document.documentElement.classList.remove("dark");
             setIsDarkMode(false);
-        } 
+        }
     }, [])
 
     const toggleTheme = () => {
-        console.log('isDarkMode', isDarkMode);
         if (isDarkMode) {
             document.documentElement.classList.remove("dark");
             localStorage.setItem("theme", "light");
@@ -24,24 +25,26 @@ export const ThemeToggle = () => {
             document.documentElement.classList.add("dark");
             localStorage.setItem("theme", "dark");
         }
+
         setIsDarkMode(!isDarkMode);
     };
 
-    let button: JSX.Element = <button></button>;
-
-    if (isDarkMode) {
-        button = (
-            <button onClick={toggleTheme}>
+    return (
+        <button
+            onClick={toggleTheme}
+            aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+            type="button"
+            className={cn(
+                "fixed max-sm:hidden top-5 right-5 z-50 p-2 rounded-full",
+                "transition-colors duration-300",
+                "focus:outline-hidden"
+            )}
+        >
+            {isDarkMode ? (
                 <Sun className="h-6 w-6 text-yellow-300" />
-            </button>
-        );
-    } else {
-        button = (
-            <button onClick={toggleTheme}>
-                <Moon className="h-6 w-6 text-bllue-900" />
-            </button>
-        );
-    }
-    
-    return button;
+            ) : (
+                <Moon className="h-6 w-6 text-blue-900" />
+            )}
+        </button>
+    );
 }
