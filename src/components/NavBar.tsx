@@ -9,8 +9,8 @@ type NavItemModel = {
 
 const navItemList: Array<NavItemModel> = [
     { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skill', href: '#skills' },
+    { name: 'About Me', href: '#about' },
+    { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
 ];
