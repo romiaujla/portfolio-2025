@@ -8,7 +8,7 @@ type NavItemModel = {
 };
 
 const navItemList: Array<NavItemModel> = [
-    { name: 'Home', href: '#home' },
+    { name: 'Home', href: '#hero' },
     { name: 'About Me', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },

@@ -8,6 +8,8 @@
 
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
 
   --color-card: hsl(var(--card));
 
@@ -81,6 +83,8 @@
     --card: 0 0% 100%;
     --primary: 250 47% 60%;
     --primary-foreground: 210 40% 98%;
+    --secondary: 250 47% 60%;
+    --secondary-foreground: 222 47% 11%;
     --border: 214 32% 91%;
   }
 
@@ -104,6 +108,7 @@
   body {
     @apply bg-background text-foreground transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Inter', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   }
 }
 
