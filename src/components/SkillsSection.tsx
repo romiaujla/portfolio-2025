@@ -72,7 +72,7 @@ export const SkillsSection = () => {
     const [activeCategory, setActiveCategory] = useState<SkillsCategoryEnum>('All');
 
     return (
-        <section id="skills" className="py-24 px-4 relative bg-secondary/10">
+        <section id="skills" className="py-24 px-4 relative">
             <div className="container mx-auto max-w-5xl">
                 <h2 className="text-3xl md-text-4xl font-bold mb-12 text-center">
                     My <span className="text-primary">Skills</span>
@@ -107,7 +107,7 @@ export const SkillsSection = () => {
                             .map((skill, index) => (
                                 <div
                                     key={index}
-                                    className="pb-3 pt-5 rounded-lg bg-secondary/50 hover:bg-secondary/100 transition-colors duration-300 w-full flex justify-center"
+                                    className="gradient-border pb-3 pt-5 rounded-lg transition-colors duration-300 w-full flex justify-center"
                                 >
                                     <h4 className="text-sm font-semibold mb-2">{skill.name}</h4>
                                 </div>
