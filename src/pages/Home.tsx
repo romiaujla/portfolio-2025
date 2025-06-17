@@ -1,6 +1,8 @@
 import { About } from "./About";
+import { Contact } from "./Contact";
 import Experience from "./Experience";
 import { Header } from "./Header";
+import { Projects } from "./Projects";
 
 export const Home = () => {
   return (
@@ -15,6 +17,8 @@ export const Home = () => {
       <div className="lg:ml-[40%] lg:py-10">
         <About />
         <Experience />
+        <Projects />
+        <Contact />
       </div>
     </main>
   );
