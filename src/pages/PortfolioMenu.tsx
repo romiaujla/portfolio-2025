@@ -26,7 +26,7 @@ export const PortfolioMenu = () => {
   return (
     <menu className="mt-10 text-xs font-semibold">
       <div
-        className={`lg:hidden fixed top-10 right-10 z-10 bg-primary-foreground rounded-md shadow-md ${isMobileMenuOpen ? "p-6" : "p-0"}`}
+        className={`lg:hidden absolute top-5 right-5 z-20 bg-primary-foreground rounded-md shadow-md ${isMobileMenuOpen ? "p-6" : "p-0"}`}
       >
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

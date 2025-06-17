@@ -2,8 +2,8 @@ import { TechnologyList } from "../components/TechnologyList";
 
 const Experience = () => {
   return (
-    <section className="text-left py-20" id="experience">
-      <h3 className="text-primary font-semibold mb-4 sticky top-0 z-10 bg-background lg:hidden px-10 py-4 bg-primary/10">
+    <section className="text-left py-10 lg:py-20" id="experience">
+      <h3 className="text-primary font-semibold mb-4 sticky top-0 z-10 lg:hidden px-10 py-4 bg-primary/10">
         EXPERIENCE
       </h3>
       <div className="flex flex-col gap-10">
@@ -105,13 +105,10 @@ const Experience = () => {
               </span>
             </div>
             <p className="text-xs mt-2 leading-relaxed">
-              At Workd, I played a pivotal role in driving CRM product
-              development, which directly improved client satisfaction and met
-              evolving business demands. My expertise in Typescript, Angular,
-              Node.js, and SQL enabled me to create and maintain applications
-              that enhanced system performance. Additionally, I designed RESTful
-              APIs and integrated various third-party systems, ensuring seamless
-              interoperability and operational efficiency.
+              During my apprenticeship at Thinkful, I learned industry standard
+              practices, mastered the latest React framework with react-router,
+              and built full-stack projects. This experience laid a strong
+              foundation for my career in software development.
             </p>
             <TechnologyList
               technologies={["Postgres SQL", "Express", "React", "Node.js"]}
