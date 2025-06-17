@@ -3,13 +3,14 @@ import { TechnologyList } from "../components/TechnologyList";
 const Experience = () => {
   return (
     <section className="text-left py-20" id="experience">
-      <h3 className="text-primary font-semibold mb-4 lg:hidden px-10 py-4 bg-primary/10">
+      <h3 className="text-primary font-semibold mb-4 sticky top-0 z-10 bg-background lg:hidden px-10 py-4 bg-primary/10">
         EXPERIENCE
       </h3>
       <div className="flex flex-col gap-10">
         <div className="flex flex-col lg:flex-row gap-4 px-10 lg:px-0">
           <div className="lg:w-1/4 text-xs font-semibold mt-1">
-            NOV 2022 - JUL 2025 (2 years 8 months)
+            <span className="block">NOV 2022 - JUL 2025</span>
+            <span className="block">(2 years 8 months)</span>
           </div>
           <div className="lg:w-[calc(100%-10rem)]">
             <div className="flex flex-col gap-2 items-start">
@@ -53,7 +54,8 @@ const Experience = () => {
         </div>
         <div className="flex flex-col lg:flex-row gap-4 px-10 lg:px-0">
           <div className="lg:w-1/4 text-xs font-semibold mt-1">
-            FEB 2020 - NOV 2022 (2 years 10 months)
+            <span className="block">FEB 2020 - NOV 2022</span>
+            <span className="block">(2 years 10 months)</span>
           </div>
           <div className="lg:w-[calc(100%-10rem)]">
             <div className="flex flex-col gap-2 items-start">
@@ -88,6 +90,31 @@ const Experience = () => {
                 "Git",
                 "CI/CD",
               ]}
+            />
+          </div>
+        </div>
+        <div className="flex flex-col lg:flex-row gap-4 px-10 lg:px-0">
+          <div className="lg:w-1/4 text-xs font-semibold mt-1">
+            <span className="block">MAY 2019 - JAN 2020</span>
+            <span className="block">(9 months)</span>
+          </div>
+          <div className="lg:w-[calc(100%-10rem)]">
+            <div className="flex flex-col gap-2 items-start">
+              <span className="text-base font-semibold">
+                Full Stack Developer at Thinkful | Apprenticeship
+              </span>
+            </div>
+            <p className="text-xs mt-2 leading-relaxed">
+              At Workd, I played a pivotal role in driving CRM product
+              development, which directly improved client satisfaction and met
+              evolving business demands. My expertise in Typescript, Angular,
+              Node.js, and SQL enabled me to create and maintain applications
+              that enhanced system performance. Additionally, I designed RESTful
+              APIs and integrated various third-party systems, ensuring seamless
+              interoperability and operational efficiency.
+            </p>
+            <TechnologyList
+              technologies={["Postgres SQL", "Express", "React", "Node.js"]}
             />
           </div>
         </div>

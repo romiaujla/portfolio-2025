@@ -20,6 +20,8 @@ export const Header = () => {
         A software engineer with a passion for building scalable and efficient
         web applications.
       </p>
+
+      <PortfolioMenu />
     </>
   );
 
@@ -28,10 +30,8 @@ export const Header = () => {
       <header className="lg:hidden text-left pt-10 px-10">
         {headerContent}
       </header>
-      <header className="hidden lg:block fixed top-10 h-screen w-1/3 pt-10 px-10 text-left">
+      <header className="hidden lg:block fixed top-10 h-screen w-[40%] max-w-[440px] pt-10 px-10 text-left">
         {headerContent}
-
-        <PortfolioMenu />
       </header>
     </div>
   );

@@ -12,7 +12,7 @@ export const Home = () => {
       <Header />
 
       {/* Scrollable content area (normal document flow) */}
-      <div className="lg:ml-[50%] lg:py-10">
+      <div className="lg:ml-[40%] lg:py-10">
         <About />
         <Experience />
       </div>
