@@ -1,6 +1,12 @@
-const TechnologyTag = ({ technology }: { technology: string }) => {
+const TechnologyTag = ({
+  technology,
+  className,
+}: {
+  technology: string;
+  className?: string;
+}) => {
   return (
-    <div className="text-xs font-semibold bg-primary/10 text-primary px-2 py-1 rounded-md">
+    <div className={`text-xs font-semibold px-2 py-1 rounded-md ${className}`}>
       {technology}
     </div>
   );

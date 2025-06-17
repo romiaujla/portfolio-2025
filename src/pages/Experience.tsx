@@ -1,4 +1,4 @@
-import TechnologyTag from "../components/TechnologyTag";
+import { TechnologyList } from "../components/TechnologyList";
 
 const Experience = () => {
   return (
@@ -6,44 +6,90 @@ const Experience = () => {
       <h3 className="text-primary font-semibold mb-4 lg:hidden px-10 py-4 bg-primary/10">
         EXPERIENCE
       </h3>
-      <div className="flex flex-col lg:flex-row gap-4 px-10 lg:px-0">
-        <div className="lg:w-1/4 text-xs font-semibold mt-1">
-          NOV 2022 - JUL 2025
-        </div>
-        <div className="lg:w-1/2">
-          <div className="flex flex-col gap-2 items-start">
-            <span className="text-base font-semibold">
-              Software Engineering Team Lead at{" "}
-              <a
-                href="https://workd.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary transition-colors underline"
-              >
-                Workd
-              </a>
-            </span>
+      <div className="flex flex-col gap-10">
+        <div className="flex flex-col lg:flex-row gap-4 px-10 lg:px-0">
+          <div className="lg:w-1/4 text-xs font-semibold mt-1">
+            NOV 2022 - JUL 2025 (2 years 8 months)
           </div>
-          <p className="text-xs mt-2 leading-relaxed">
-            Led the development of a comprehensive CRM platform that increased
-            client satisfaction by 40% and streamlined business operations.
-            Leveraged TypeScript, Angular, Node.js, and SQL to architect
-            scalable solutions that reduced system response time by 60%.
-            Spearheaded the design of RESTful APIs and third-party integrations,
-            resulting in a 50% reduction in manual data entry and improved
-            cross-platform functionality.
-          </p>
-          <ul className="flex flex-wrap gap-2 mt-2">
-            {["Typescript", "Angular", "Node.js", "ElasticSearch", "AWS"].map(
-              (technology) => {
-                return (
-                  <li key={technology}>
-                    <TechnologyTag technology={technology} />
-                  </li>
-                );
-              }
-            )}
-          </ul>
+          <div className="lg:w-[calc(100%-10rem)]">
+            <div className="flex flex-col gap-2 items-start">
+              <span className="text-base font-semibold">
+                Software Engineering Team Lead at{" "}
+                <a
+                  href="https://workd.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary transition-colors underline"
+                >
+                  Workd
+                </a>
+              </span>
+            </div>
+            <p className="text-xs mt-2 leading-relaxed">
+              At Workd, I played a pivotal role in driving CRM product
+              development, which directly improved client satisfaction and met
+              evolving business demands. My expertise in Typescript, Angular,
+              Node.js, and SQL enabled me to create and maintain applications
+              that enhanced system performance. Additionally, I designed RESTful
+              APIs and integrated various third-party systems, ensuring seamless
+              interoperability and operational efficiency.
+            </p>
+            <TechnologyList
+              technologies={[
+                "Typescript",
+                "Angular",
+                "Node.js",
+                "ElasticSearch",
+                "AWS (EC2, S3, SQS, Lambda, CloudWatch)",
+                "Redis",
+                "Docker",
+                "RxJS",
+                "Git",
+                "CI/CD",
+                "Bitbucket API",
+              ]}
+            />
+          </div>
+        </div>
+        <div className="flex flex-col lg:flex-row gap-4 px-10 lg:px-0">
+          <div className="lg:w-1/4 text-xs font-semibold mt-1">
+            FEB 2020 - NOV 2022 (2 years 10 months)
+          </div>
+          <div className="lg:w-[calc(100%-10rem)]">
+            <div className="flex flex-col gap-2 items-start">
+              <span className="text-base font-semibold">
+                Software Engineer at{" "}
+                <a
+                  href="https://workd.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary transition-colors underline"
+                >
+                  Workd
+                </a>
+              </span>
+            </div>
+            <p className="text-xs mt-2 leading-relaxed">
+              In my role as a Software Engineer at Workd, I focused on enhancing
+              user experience and operational efficiency. By collaborating
+              closely with UI/UX designers, I contributed to the creation of
+              user-friendly application interfaces. I also led data migration
+              efforts to ensure seamless onboarding for new clients, while
+              revamping the e-commerce segment to improve functionality. My
+              commitment to quality was demonstrated through the implementation
+              of unit and automated frontend tests.
+            </p>
+            <TechnologyList
+              technologies={[
+                "Typescript",
+                "Angular",
+                "Node.js",
+                "RxJS",
+                "Git",
+                "CI/CD",
+              ]}
+            />
+          </div>
         </div>
       </div>
     </section>
