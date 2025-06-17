@@ -15,7 +15,10 @@ export const TechnologyList = ({
     <ul className="flex flex-wrap gap-2 mt-2">
       {displayedTechnologies.map((technology) => (
         <li key={technology}>
-          <TechnologyTag technology={technology} />
+          <TechnologyTag
+            technology={technology}
+            className="text-primary bg-primary-foreground/10"
+          />
         </li>
       ))}
       {technologies.length > 4 && (
