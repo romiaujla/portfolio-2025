@@ -22,8 +22,14 @@ const menuItems = [
 export const PortfolioMenu = () => {
   const [activeItem, setActiveItem] = useState<string>("ABOUT");
 
-  const handleClick = (item: string) => {
-    setActiveItem(item);
+  const handleClick = (label: string) => {
+    setActiveItem(label);
+    const element = document.getElementById(label.toLowerCase());
+    if (element) {
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: "smooth" });
+      }, 200); // 300ms delay
+    }
   };
 
   return (
@@ -32,7 +38,7 @@ export const PortfolioMenu = () => {
         {menuItems.map((item) => (
           <li
             key={item.label}
-            className={`text-sm lg:text-base font-semibold cursor-pointer transition-all duration-300 flex flex-row items-center ${
+            className={`text-xs font-semibold cursor-pointer transition-all duration-300 flex flex-row items-center hover:text-primary ${
               activeItem === item.label
                 ? "text-primary"
                 : "text-foreground hover:text-primary"
@@ -44,7 +50,7 @@ export const PortfolioMenu = () => {
                 className={`border-b-1 ${activeItem === item.label ? "border-primary" : "border-foreground"} w-[80%] h-1 `}
               />
             </div>
-            {item.label}
+            <span>{item.label}</span>
           </li>
         ))}
       </ul>
