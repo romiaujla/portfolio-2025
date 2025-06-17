@@ -1,29 +1,16 @@
-import { AboutSection } from "../components/AboutSection";
-import { HeroSection } from "../components/HeroSection";
-import { NavBar } from "../components/NavBar";
-import { ProjectsSection } from "../components/ProjectsSection";
-import { SkillsSection } from "../components/SkillsSection";
-import { StarBackground } from "../components/StarBackground";
-import { ThemeToggle } from "../components/ThemeToggle";
+import { About } from "./About";
+import { Header } from "./Header";
 
 export const Home = () => {
-    return <div className="min-h-screen bg-background text-foreground overflow-xhidden">
-        <ThemeToggle />
+  return (
+    <main className="bg-background text-foreground overflow-x-hidden lg:mx-auto lg:max-w-5xl relative">
+      {/* Fixed Sidebar on the left */}
+      <Header />
 
-        <StarBackground />
-
-        <NavBar />
-
-        <main>
-            <HeroSection />
-            <AboutSection />
-            <SkillsSection />
-            <ProjectsSection />
-        </main>
-    </div>
-
-    {/* Main Content */ }
-
-    {/* Footer */ }
-    ;
-}
+      {/* Scrollable content area (normal document flow) */}
+      <div className="lg:ml-[50%] lg:py-10">
+        <About />
+      </div>
+    </main>
+  );
+};
