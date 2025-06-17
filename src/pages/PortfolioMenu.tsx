@@ -15,6 +15,8 @@ export const PortfolioMenu = () => {
   const handleClick = (label: string) => {
     setActiveItem(label);
     const element = document.getElementById(label.toLowerCase());
+    console.log(element);
+
     if (element) {
       setTimeout(() => {
         element.scrollIntoView({ behavior: "smooth" });

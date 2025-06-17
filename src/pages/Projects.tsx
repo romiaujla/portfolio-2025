@@ -16,10 +16,11 @@ export const Projects = () => {
   const projects: Array<ProjectItem> = [
     {
       title: "Transportation Management System",
-      description: `I am currently building a transportation management system using
-              Next.js, Turborepo, Express, and PostgreSQL. This project is
-              managed in a monorepo structure, allowing for efficient
-              development and scalability.`,
+      description: `I am building a multi-tenant transportation management system designed specifically for small trucking companies in Dubai.
+              This platform allows multiple companies to create their own accounts and manage their transportation needs independently.
+              The system is built using Next.js, Turborepo, Express, and PostgreSQL, with a monorepo structure for efficient development and scalability.
+              My goal is to help small trucking companies in Dubai streamline their daily operations and reduce manual workflows.
+              This project addresses a gap in the market where existing solutions are often too complex or expensive for small businesses.`,
       technologies: [
         "Next.js",
         "Turborepo",
@@ -52,7 +53,29 @@ export const Projects = () => {
               <p className="text-xs mt-2 leading-relaxed">
                 {project.description}
               </p>
-              <TechnologyList technologies={project.technologies} />
+              <p className="text-xs mt-2 leading-relaxed">
+                Key Features:
+                <ul className="list-disc list-inside">
+                  {[
+                    "Instance Management (Super Admin)",
+                    "User & Role Management",
+                    "Dashboard",
+                    "Equipment Management",
+                    "Route Planning and Scheduling",
+                    "Load Management (Driver)",
+                    "Load Management (Dispatcher)",
+                    "Accounting (Invoicing and Payroll)",
+                  ].map((feature) => (
+                    <li key={feature}>
+                      <span className="font-semibold">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </p>
+              <TechnologyList
+                technologies={project.technologies}
+                className="mt-4"
+              />
               <div className="text-xs flex flex-row gap-2 mt-3">
                 {project.githubRepoLink != null && (
                   <a

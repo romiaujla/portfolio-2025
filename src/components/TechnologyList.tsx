@@ -3,8 +3,10 @@ import TechnologyTag from "./TechnologyTag";
 
 export const TechnologyList = ({
   technologies,
+  className,
 }: {
   technologies: string[];
+  className?: string;
 }) => {
   const [showAll, setShowAll] = useState(false);
   const displayedTechnologies = showAll
@@ -12,7 +14,7 @@ export const TechnologyList = ({
     : technologies.slice(0, 4);
 
   return (
-    <ul className="flex flex-wrap gap-2 mt-2">
+    <ul className={`flex flex-wrap gap-2 mt-2 ${className}`}>
       {displayedTechnologies.map((technology) => (
         <li key={technology}>
           <TechnologyTag
