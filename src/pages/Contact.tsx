@@ -1,5 +1,9 @@
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const EMAILJS_PUBLIC_KEY = "6c_XGXy-2-oRDpmLb";
+const EMAILJS_SERVICE_ID = "service_kdkqllo";
+const EMAILJS_TEMPLATE_ID = "template_t22wmdr";
 
 interface ContactItem {
   label: string;
@@ -17,33 +21,34 @@ export const Contact = () => {
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    if ("emailjs" in window && window.emailjs != null) {
+      // @ts-ignore
+      window.emailjs.init(EMAILJS_PUBLIC_KEY);
+    }
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    setFormData({ name: "", email: "", message: "" });
-
     try {
-      const response = await fetch(
-        "https://api.emailjs.com/api/v1.0/email/send",
+      // @ts-ignore
+      const response = await window.emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         {
-          method: "POST",
-          body: JSON.stringify({
-            from_name: formData.name,
-            to_name: "Raman Aujla",
-            from_email: formData.email,
-            to_email: "raujla0228@gmail.com",
-            message: formData.message,
-          }),
-          headers: {
-            "Content-Type": "application/json",
-          },
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
         }
       );
 
-      if (response.status != 200) {
-        throw new Error("Failed to send email");
-      } else {
+      if (response.status === 200) {
         setShowSuccess(true);
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        throw new Error("Failed to send email");
       }
     } catch (error) {
       setShowError(true);
