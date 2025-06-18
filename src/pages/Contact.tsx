@@ -52,6 +52,7 @@ export const Contact = () => {
 
     setTimeout(() => {
       setShowSuccess(false);
+      setShowError(false);
     }, 3000);
   };
 
@@ -180,7 +181,7 @@ export const Contact = () => {
         </form>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10 px-10 lg:px-0">
+      <div className="grid grid-cols-2 gap-4 mt-10 px-10 lg:px-0">
         {contactList.map((contact) => (
           <div key={contact.label} className="flex flex-row gap-6 items-center">
             <div className="w-4 h-4 text-primary">{contact.icon}</div>
